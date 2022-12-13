@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPU's</title>
+    <link rel="stylesheet" href="../css/stail.css">
+</head>
+<body >
+    <div class="contenedor" >
+            <h2 class="titulo"> Tu CPU </h2>
+            <div class="row">
+            <div class="col-sm-9">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>Modelo</th>
+                            <th>Velocidad</th>
+                            <th>Usuario</th>
+                            <th>Almacenamiento Total</th>
+                            <th>Almacenamiento Disponible</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% if(dataPoke){ %>
+                            <% for(let i=0; i < dataPoke.length; i++) {%>
+                                <tr>
+                                    <td><%= dataPoke [i].model%></td>
+                                    <td><%= dataPoke [i].speed%></td>
+                                    <td>
+                                        <table class="table table-bordered table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <td>Usuario</td>
+                                                    <td>Nice</td>
+                                                    <td>Sistema</td>
+                                                    <td>Inactivo</td>
+                                                    <td>Irq</td>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                                        <tr>
+                                                            <td><%= dataPoke [i].times.user%></td>
+                                                            <td><%= dataPoke [i].times.nice%></td>
+                                                            <td><%= dataPoke [i].times.sys%></td>
+                                                            <td><%= dataPoke [i].times.idle%></td>
+                                                            <td><%= dataPoke [i].times.irq%></td>
+                                                        </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                    <td>Total memoria disponible en MB : <%= dataTotal %></td>
+                                    <td>Total memoria libre en MB :<%= dataLibre %></td>
+                                </tr>
+                            <% } %>
+                        <% } %>
+                    </tbody>
+                </table>
+            </div>      
+        </div>
+        <div class="row">
+            <div class="col-md-9">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <td>Disco Actual</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <table class="table table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <td>Montado en</td>
+                                            <td>Total</td>
+                                            <td>Usado</td>
+                                            <td>Disponible</td>
+                                            <td>Capacidad</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                                <tr>
+                                                    <td><%= dataDiscMounted%></td>
+                                                    <td><%= dataDiscTotall%></td>
+                                                    <td><%= dataDiscUsed%></td>
+                                                    <td><%= dataDiscAvailable%></td>
+                                                    <td><%= dataDiscCapacity%></td>
+                                                </tr>
+                            </tbody>
+                                </table>
+                            </td>
+                        </tr>
+            </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+*{
+    font-family:monospace;
+    font-size: 20px;
+}
+
+body{
+    background-image: url(../css/img/KirbyRD10th.jpg);
+    background-repeat: no-repeat;
+    position: relative;
+    width: 85%;
+    height: 610px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table, th, td, tr{
+    background-color: rgba(111, 235, 177, 0.288);
+    margin:5px #000;
+    border: solid #000;
+    box-shadow: 30px solid rgb(51, 51, 51)0;
+}
+
+div{
+    flex: content;
+    align-items: center;
+}
+
+.titulo{
+    font-size: 30px;
+    text-align: center;
+    text-shadow: solid rgb(43, 43, 43);
+}
